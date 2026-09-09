@@ -1,13 +1,11 @@
 # UCL 3ML Course Selector
 
-A mobile-first course selector for UCL's machine-learning-related MSc programmes.
+Mobile-first 2026/27 course planning tool for three UCL MSc programmes:
 
-The current version covers the 2026/27 Data Science and Machine Learning MSc, including module choices, prerequisites, assessment structure, historical grade data and term-by-term workload views. Support for Machine Learning MSc and Computational Statistics and Machine Learning MSc can be added later.
+- Data Science and Machine Learning (DSML)
+- Machine Learning (ML)
+- Computational Statistics and Machine Learning (CSML)
 
-## Live site
+The site shows compulsory and optional modules, assessment structure, prerequisites and historical mean marks from the supplied UCL FOI datasets. Plans are encoded in the URL hash and can be shared with **复制方案链接**.
 
-https://catherinetongyan.github.io/ucl-3ml-course-selector/
-
-## Notes
-
-Course availability, assessment methods, prerequisites and timetables may change. Always confirm details in UCL Portico and the official UCL Module Catalogue before registration.
+This is an unofficial planning aid. Module availability, prerequisites, capacity and timetable should be verified in Portico and the UCL Module Catalogue.
