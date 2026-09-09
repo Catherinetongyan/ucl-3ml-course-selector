@@ -7,7 +7,7 @@
   <meta name="description" content="UCL Data Science and Machine Learning MSc 2026/27 手机端选课组合器">
   <title>UCL DSML 选课组合器</title>
   <style>
-    :root{--navy:#101b3f;--navy2:#192b61;--blue:#3157d5;--cyan:#21b8c5;--lime:#b9e769;--amber:#ffbd59;--rose:#ef6d7a;--ink:#172139;--muted:#66738a;--paper:#f4f6fa;--white:#fff;--line:#dce2eb;--soft:#edf1f7;--shadow:0 12px 32px rgba(16,27,63,.09)}
+    :root{--navy:#500778;--navy2:#3b0059;--blue:#7a1f91;--cyan:#c56fd6;--lime:#d9ef9f;--amber:#f6c76f;--rose:#d45b82;--ink:#26162d;--muted:#786b7e;--paper:#fbf9fc;--white:#fff;--line:#e8deeb;--soft:#f3edf5;--shadow:0 12px 32px rgba(80,7,120,.10)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5;padding-bottom:calc(84px + env(safe-area-inset-bottom))}button{font:inherit;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid rgba(49,87,213,.3);outline-offset:3px}.shell{width:min(780px,100%);margin:auto}
     header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;padding:22px 18px 25px;position:relative;overflow:hidden}header:after{content:"";position:absolute;width:180px;height:180px;border:44px solid rgba(33,184,197,.15);border-radius:50%;right:-70px;top:-95px}.brand{position:relative;z-index:1;font-size:.75rem;letter-spacing:.11em;font-weight:850;color:#bec9ec;text-transform:uppercase}.brand i{display:inline-block;width:20px;height:6px;border-radius:9px;background:var(--cyan);margin-right:8px}h1{position:relative;z-index:1;font-size:clamp(1.85rem,8vw,2.6rem);line-height:1.05;letter-spacing:-.04em;margin:25px 0 8px}.lead{position:relative;z-index:1;margin:0;color:#dce4ff;font-size:.9rem;max-width:620px}
     .progress-shell{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;padding:10px 16px;box-shadow:0 4px 16px rgba(16,27,63,.06)}.progress-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.76rem}.progress-top strong{color:var(--navy)}.progress-top span{color:var(--muted)}.progress{height:7px;background:var(--soft);border-radius:10px;overflow:hidden;margin-top:7px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:10px;transition:width .22s ease}
@@ -21,13 +21,20 @@
     @media(min-width:780px){body{padding-bottom:96px}.shell{width:min(1080px,calc(100% - 40px))}header{padding:32px 0}.progress-shell{padding-left:max(16px,calc((100% - 1080px)/2));padding-right:max(16px,calc((100% - 1080px)/2))}main{padding:22px 0}.course-list{grid-template-columns:1fr 1fr}.summary-grid{grid-template-columns:repeat(4,1fr)}.work-layout{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sticky-inner{width:min(1080px,calc(100% - 40px))}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   
-    .programme-nav{position:relative;z-index:2;margin-top:15px}.programme-nav a{display:inline-flex;align-items:center;gap:6px;color:#dce4ff;font-size:.76rem;font-weight:800;text-decoration:none;padding:7px 10px;border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.08)}
+    header{background:linear-gradient(145deg,#500778,#6f2185);padding-top:calc(22px + env(safe-area-inset-top));border-radius:0 0 26px 26px;box-shadow:0 10px 30px rgba(80,7,120,.18)}
+    header:after{border-color:rgba(255,255,255,.10)}
+    .brand{color:#eadcf0;letter-spacing:.04em;text-transform:none;line-height:1.4;max-width:90%}.brand i{background:#d6a9e2}
+    .lead{color:#f2e8f5}.progress-shell{border-color:var(--line)}
+    .programme-nav{position:relative;z-index:2;margin-top:15px}.programme-nav a{display:inline-flex;align-items:center;gap:6px;color:#f5eaf8;font-size:.76rem;font-weight:800;text-decoration:none;padding:8px 11px;border:1px solid rgba(255,255,255,.24);border-radius:12px;background:rgba(255,255,255,.10)}
     .empty-required{border:1px dashed var(--line);border-radius:13px;padding:12px 14px;color:var(--muted);font-size:.76rem;background:rgba(255,255,255,.55)}
-    .project-note{background:#eef1ff;border-color:#cfd8ff;color:#2a448f}.project-note button{border:0;background:transparent;color:#2948b5;font-weight:850;padding:0;text-decoration:underline;cursor:pointer}
+    .project-note{background:#f7eff9;border-color:#dfc8e5;color:#592069}.project-note button{border:0;background:transparent;color:#6f2185;font-weight:850;padding:0;text-decoration:underline;cursor:pointer}
+    .course,.metric,.section-card{border-radius:19px}.primary,.secondary,.jump{border-radius:13px}.progress i{background:linear-gradient(90deg,#500778,#b368c4)}
+    .grade-fact{background:#f5eaf8;color:#6f2185}.assessment-chip,.catalogue-link{background:#f4eaf7;color:#681d7d}.catalogue-link:hover,.catalogue-link:focus-visible{background:#ead7ef}
+    @media(min-width:780px){header{border-radius:0 0 32px 32px}}
 </style>
 </head>
 <body>
-  <header><div class="shell"><div class="brand"><i></i>UCL DSML · 2026/27</div><h1>选课组合器</h1><p class="lead">两个学期的全部选修课一次展示。点击右上角加号加入课程，实时查看学分、先修关系、考核结构与五月考试负担。</p><div class="programme-nav"><a href="../">← 切换专业</a></div></div></header>
+  <header><div class="shell"><div class="brand"><i></i>Data Science and Machine Learning MSc（DSML）· 2026/27</div><h1>选课组合器</h1><p class="lead">两个学期的全部选修课一次展示。点击右上角加号加入课程，实时查看学分、先修关系、考核结构与五月考试负担。</p><div class="programme-nav"><a href="../">← 切换专业</a></div></div></header>
   <div class="progress-shell"><div class="progress-top"><strong id="progressLabel">已选择 0 / 6 门选修</strong><span id="creditLabel">90 / 180 credits</span></div><div class="progress"><i id="progressBar" style="width:50.0%"></i></div></div>
   <main class="shell"><noscript><div class="notice"><strong>当前浏览器没有运行网页脚本。</strong>如需生成选课组合，请使用 Safari 或 Chrome 打开。</div></noscript>
     <div class="notice"><strong>使用方式：</strong>总共选择 6 门选修，两个学期可自由分配。必修课已自动加入；COMP0081 要求 Term 1 修过 COMP0088 或 COMP0078。</div>
